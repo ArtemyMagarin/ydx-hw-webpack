@@ -25,12 +25,28 @@ const config: webpack.Configuration = {
         }),
     ],
     resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
         fallback: {
             "buffer": require.resolve("buffer"),
             "stream": false,
         },
     },
     module: {
+        rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                include: path.resolve(__dirname, 'src'),
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+                        },
+                    },
+                ],
+            },
+        ],
     },
 };
 
