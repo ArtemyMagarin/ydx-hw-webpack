@@ -27,8 +27,11 @@ const config: webpack.Configuration = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         fallback: {
-            "buffer": require.resolve("buffer"),
-            "stream": false,
+            'buffer': require.resolve('buffer'),
+            'stream': false
+        },
+        alias: {
+            'crypto-browserify': require.resolve(path.resolve(__dirname, 'lib/light-crypto')),
         },
     },
     module: {

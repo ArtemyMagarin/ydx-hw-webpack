@@ -1,0 +1,11 @@
+{
+  "name": "light-crypto",
+  "description": "",
+  "version": "1.0.0",
+  "main": "crypto.js",
+  "license": "MIT",
+  "types": "./crypto.d.ts",
+  "peerDependencies": {
+    "uuid": "^8.3.2"
+  }
+}
